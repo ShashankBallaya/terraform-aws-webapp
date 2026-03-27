@@ -87,7 +87,7 @@ terraform-aws-webapp/
 │ ├── asg/ # Launch template, Auto Scaling Group
 │ └── rds/ # RDS MySQL, DB subnet group
 └── architecture/
- └── project2-architecture.png
+ └── Project-2_Architecture.png
 ```
 ## What I Learned
 - Designed and deployed a highly available 3-tier architecture using Terraform with modular infrastructure (VPC, LAB, ASG, RDS).
