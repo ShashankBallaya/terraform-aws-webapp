@@ -74,7 +74,20 @@ terraform destroy
 
 ## Terraform Module Structure
 ```
-
+terraform-aws-webapp/
+├── main.tf # calls all modules
+├── variables.tf # input variables
+├── outputs.tf # ALB DNS, RDS endpoint, VPC ID
+├── backend.tf # S3 remote state + DynamoDB locking
+├── terraform.tfvars # your values (gitignored)
+├── modules/
+│ ├── vpc/ # VPC, subnets, IGW, NAT GW, route tables
+│ ├── sg/ # ALB, EC2, RDS security groups
+│ ├── alb/ # ALB, target group, listener
+│ ├── asg/ # Launch template, Auto Scaling Group
+│ └── rds/ # RDS MySQL, DB subnet group
+└── architecture/
+ └── project2-architecture.png
 ```
 ## What I Learned
 - Designed and deployed a highly available 3-tier architecture using Terraform with modular infrastructure (VPC, LAB, ASG, RDS).
